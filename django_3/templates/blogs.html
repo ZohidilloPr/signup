@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}
+    Home
+{% endblock title %}
+
+{% block content %}
+    <div class="my-5">
+        {% if user.is_authenticated %}
+            <h1 class="user">{{ user.username }}</h1>
+            <a href="{% url 'blog:AB' %}">Add Blog</a> |
+            <a href="{% url 'accounts:LO' %}">LogOut</a>
+        {% else %}
+            <a href="{% url 'accounts:CU' %}">Register User</a> | 
+            <a href="{% url 'accounts:LI' %}">Login</a>
+        {% endif %}
+    </div>
+    <div class="row mt-5">
+        {% for i in object_list %}
+            <div class="col-xxl-8 m-auto">
+                <div class="card mb-3">
+                    <h5 class="card-header">{{ i.author.username }}</h5>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ i.title }}</h5>
+                        <p class="card-text">{{ i.blog | slice:250 }}</p>
+                        <a href="{% url 'blog:OB' pk=i.pk %}" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>  
+            </div>
+        {% endfor %}
+    </div>
+{% endblock content %}
+
+
+
+

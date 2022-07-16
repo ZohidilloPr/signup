@@ -1,0 +1,13 @@
+form{
+    margin-top: 55px;
+}
+input, textarea{
+    width: 100%;
+    padding: 10px;
+    outline-color: darkcyan;
+}
+.user{
+    font-size: 45px;
+    color: darkcyan;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

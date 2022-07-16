@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}
+    Blog
+{% endblock title %}
+{% block content %}
+    <a href="{% url 'blog:BV' %}" class="mt-5 btn btn-outline-dark">Back To Home</a>
+    <div class="row mt-5">
+        <div class="col-xxl-8 m-auto">
+            <div class="card mb-3">
+                <h5 class="card-header">{{ object.author.username }}</h5>
+                <div class="card-body">
+                    <h5 class="card-title">{{ object.title }}</h5>
+                    <p class="card-text">{{ object.blog }}</p>
+                    <a href="{% url 'blog:UB' pk=object.pk %}">Update</a> |
+                    <a href="{% url 'blog:DB' pk=object.pk %}">Delete</a>
+                </div>
+            </div>  
+        </div>
+    </div>
+{% endblock content %}
+
+

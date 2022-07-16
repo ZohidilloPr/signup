@@ -1,0 +1,7 @@
+<form action="" method="post">
+    {% csrf_token %}
+    <h1>Sen haqiqatdan ham bu {{ object.title | slice:25 }}..... objectni o'chirishni xoxlaysanmi?</h1>
+    <p> <mark>Warning</mark> qayta tiklash imkonsiz! </p>
+    <input type="submit" class="btn btn-danger" value="Yes I am Sure">
+    <a href="{% url 'blog:BV' %}" class="text-info">Cancel</a>
+</form>
